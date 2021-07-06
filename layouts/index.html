@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+
+<section class="section"><div class="container">
+    <div class="is-vcentered columns is-multiline">
+      <div class="column is-5">
+        {{ with.Site.Params.frontPageHeader }}
+        <h2 class="mb-4 is-size-1 is-size-3-mobile has-text-weight-bold">{{ .frontPageHeader }}</h2>
+        {{end}}
+        <p class="subtitle has-text-grey mb-5"> {{ with.Site.Params.frontPageText }} {{ .frontPageText }} {{ end }}</p>
+        {{ with.Site.Params.frontPageButtonText}}
+        <a class="button is-primary" href="{{ .url }}"> {{ .text }}  </a>
+        {{ end }}  
+    </div>
+
+      <div class="column is-6 ml-auto">
+       {{ with.Site.Params.frontPageImage }} <img class="image is-fullwidth" src="{{ .url }}" alt="{{ .altText }}"> {{ end }}
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+      <div class="mb-5 columns is-multiline">
+        {{ range last 9 .Site.Taxonomies.tags.featured }}
+         <div class="column is-4 is-4-desktop mb-4">
+          <div class="box p-5 has-background-light">
+            <div class="mb-4 is-relative">
+              <a href="{{ .Page.RelPermalink }}" class="has-text-dark">
+
+              {{ with.Params.frontPageTag }} <span class="mt-3 mr-3 tag is-info" style="position: absolute; top: 0; right: 0; z-index: 1;"> {{ . }}  </span>{{ end }}
+              {{ with .Params.featured_image }} 
+              <img class="image is-fullwidth" src="{{ . }}" alt="">{{ end }}
+            </div>
+          
+            <span><small class="has-text-grey-dark">{{ .Params.Date.Format "January 2, 2006" }}</small></span>
+            <h2 class="mb-4 is-size-4 has-text-weight-bold">{{ .Page.Title }}</h2>
+            <p class="subtitle has-text-grey">{{ .Summary }}</p> 
+          </a>
+            <a href="{{ .Page.RelPermalink }}">Read More</a>
+          </div>
+        </div>
+      
+        {{ end }}
+ 
+    </div>
+    </div>
+      
+{{ with.Site.Params.ViewMoreButton }}      <div class="has-text-centered"><a class="button is-primary" href="{{ .url }}">{{ .buttonText }}</a></div> {{ end }}
+    
+  </section>
+
+{{ end }}

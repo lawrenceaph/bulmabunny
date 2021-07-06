@@ -1,0 +1,35 @@
+
+{{ define "main" }}
+ 
+<div class="container pl-2">
+    <h1 class="title has-text-weight-bold mt-4">{{ .Title }}</h1>
+{{ range .Pages.ByPublishDate.Reverse }}
+<div class="content container" style="max-width: 70ch;">
+
+<p>
+
+    <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ .Params.Date.Format "January 2, 2006" }} 
+    
+    
+        {{ with .Params.tags }}
+        {{ range . }}
+        {{ $href := print (absURL "tags/") (urlize .) }}
+        <a class="btn btn-sm btn-outline-dark tag-btn" href="{{ $href }}">{{ . }} |</a>
+        {{ end }}
+        {{ end }}
+
+
+    <div class="content" style="max-width: 70ch;">
+        <a href="{{ .RelPermalink }}">    {{ with .Params.featured_image }}<img src="{{ . }}">{{ end }} </a> 
+    <a class="content has-text-dark" href="{{ .RelPermalink }}">
+        <p>{{ .Summary }} </p>
+    </a> <a href=" {{ .RelPermalink }} ">Read more</a>
+</p>
+</div>
+</div>
+
+{{ end }}
+{{ end }}
+
+          

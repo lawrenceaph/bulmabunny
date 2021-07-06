@@ -1,0 +1,29 @@
+<nav class="navbar py-4 is-dark
+      "><div class="container">
+          <div class="navbar-brand">
+            
+            {{ with.Site.Params.Logo }} 
+            
+            <a class="navbar-item" href="/"> <img src="{{ .source }}"> </a>
+            
+            {{ else }}
+            <a class="navbar-item has-text-weight-semibold is-size-4 is-size-4-mobile" href="/"> {{ .Site.Title }} </a>
+            
+            {{ end }}
+            
+            <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-end">
+                {{ range .Site.Menus.main }}
+                <a class="navbar-item" href="{{ .URL }}"> {{ $text := print .Name | safeHTML }}
+                {{ $text }}   </a>                 {{ end }}
+            </div>
+          </div>
+        </div>
+      </nav>

@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+<section><div class="section">
+    <div class="container mb-5">
+      <div class="columns is-multiline is-centered">
+        <div class="column is-8 has-text-centered">
+          <nav class="breadcrumb is-centered mb-3" aria-label="breadcrumbs"><ul><li><a href="/">Home</a></li>
+              <li><a href="/posts">Posts</a></li>
+              <li><a href="#">{{ .Title}} </a></li>
+            </ul></nav><h2 class="mb-4 is-size-1 is-size-3-mobile has-text-weight-bold">{{ .Title }}</h2>
+          <div class="is-flex is-justify-content-center is-align-items-center has-text-left">
+            <div class="mr-4">
+             {{ with.Params.avatar }} <img class="image is-fullwidth" src="{{ . }}" alt="" style="width: 100px; height: 100px; border-radius: 50%;"></div> {{ end }}
+                         <div>
+             {{ with.Params.author }} <h4 class="is-size-5 has-text-weight-bold">{{ . }}</h4> {{ end }}
+              <p class="has-text-grey-dark mb-0">{{ .Params.Date.Format "January 2, 2006" }}</p> 
+              <div class="content">{{ .ReadingTime }} minute read</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-5">
+ {{ with.Params.featured_image }} <img class="image" src="{{ . }}" alt=""></div> {{ end }}
+  
+ <div class="section">
+      <div class="columns is-multiline is-centered">
+        <div class="column is-12 is-12-desktop content">
+
+            {{ .Content }}
+
+        </div>
+      </div>
+    
+  </div>
+</section>
+
+ 
+
+
+{{ end }}
