@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Bulma Bunny"
-theme= "alpha1"
+theme= "bulmabunny"
 footerText = "AritaoCreative, Inc."
 pluralizelisttitles = false
 
