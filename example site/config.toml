@@ -1,0 +1,78 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Bulma Bunny"
+theme= "alpha1"
+footerText = "AritaoCreative, Inc."
+pluralizelisttitles = false
+
+[params]
+footerContent= "A Hugo Site by Lawrence Aritao &nbsp"
+author = "AritaoCreative, Inc"
+favicon = "/images/owl.png"
+
+# Uncomment params.Logo if you want to use a logo 
+# [params.Logo] 
+# source= "/images/ballerina.gif"
+
+[params.frontPageHeader]
+frontPageHeader= "Welcome"
+[params.frontPageText]
+frontPageText = "This is our digital garden and incubation station for ideas, articles, and passion projects. Sign up for our newsletter if you'd like to stay updated."
+[params.frontPageButtonText]
+text = "Sign Up for Our Newsletter!"
+url=""
+[params.frontPageImage]
+url ="/images/garden.png"
+altText= "garden"
+
+
+[params.ViewMoreButton]
+url = "/posts"
+buttonText = "View More Articles"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Posts"
+    pre = "pen-tool"
+    url = "/posts/"
+    weight = 2
+#   [[menu.main]]
+#     name = "Tags"
+#     pre = "tag"
+#     url = "/tags/"
+#     weight = 3
+  [[menu.main]]
+    name = "About"
+    pre = "about"
+    url = "/about"
+    weight = 4
+
+[params.FootMenu]
+    [[params.FootMenu.Item]]
+    name = "Home"
+    pre = "Home"
+    url = "/"
+    weight = 1
+
+    [[params.FootMenu.Item]]
+    name = "Posts"
+    pre = "Posts"
+    url = "/posts/"
+    weight = 2
+
+    [[params.FootMenu.Item]]
+    name = "About"
+    pre = "About"
+    url = "/about/"
+    weight = 3
+
+ 
