@@ -24,7 +24,7 @@
 <section class="section">
     <div class="container">
       <div class="mb-5 columns is-multiline">
-        {{ range last 9 .Site.Taxonomies.tags.featured }}
+        {{ range where .Site.Pages "Params.placement" "front" }}
          <div class="column is-4 is-4-desktop mb-4">
           <div class="box p-5 has-background-light">
             <div class="mb-4 is-relative">
